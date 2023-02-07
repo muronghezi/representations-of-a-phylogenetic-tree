@@ -465,7 +465,7 @@ def tree_to_cuts(V,E,n):# V is a list of tuples containing information on the la
 #print is_phylogenetic_cut_set(tree_to_cuts(V,E,9),9)
 #print tree_to_cuts(V,E,9)
 
-def cuts_to_tree(C,n):# C is a list of lists with cardinality two of two tuples, representing a collection of cuts on {1,2,...,n}; n is a natural number bigger than two. Output its corresponding phylogenetic tree if the set C is a phylogenetic cut set on {1,2,...,n}; otherwise, output "please input a phylogenetic set of cuts".. See Definition 2 in Section 1.1 for "phylogenetic tree", see Definition 7 in Section 1.3 for a "phylogenetic cut set on {1,2,...,n}", and see Definition 23 in Section 2.2 for this conversion, in the preprint arXiv:2011.11774v2.
+def cuts_to_tree(C,n):# C is a list of lists with cardinality two of two tuples, representing a collection of cuts on {1,2,...,n}; n is a natural number bigger than two. Output its corresponding phylogenetic tree if the set C is a phylogenetic cut set on {1,2,...,n}; otherwise, output "please input a phylogenetic set of cuts".. See Definition 2 in Section 1.1 for "phylogenetic tree", see Definition 7 in Section 1.3 for a "phylogenetic cut set on {1,2,...,n}", and see Definition 23 in Section 2.2 for this conversion, in the preprint arXiv:2011.11774v2. Note that the names of the vertices of the output tree are some subsets of {1,2,...,n}, following the algorithm given in the above-mentioned preprint.
     C1 = list(C)
     if (is_phylogenetic_cut_set(C1,n) != 'yes'):
         return 'Please input a phylogenetic set of cuts.'
@@ -526,7 +526,7 @@ def cuts_to_tree(C,n):# C is a list of lists with cardinality two of two tuples,
 #C1 = tree_to_cuts(G.nodes.data(),G.edges,9)
 #print two_same_cuts(C0, C1)
 
-def partitions_to_tree(P,n):# P is a list of lists of tuples, representing a set of partitions on the set {1,2,...,n}; n is a natural number bigger than 2. Output is the corresponding phylogenetic tree of P, if P is phylogenetic; otherwise, output "please input a phylogenetic set of partitions". See Definition 3 in Section 1.2 for "phylogenetic set of partitions", see Definition 2 in Section 1.1 for "phylogenetic tree", and see Definition 20 in Section 2.1 for this conversion, in the preprint arXiv:2011.11774v2.
+def partitions_to_tree(P,n):# P is a list of lists of tuples, representing a set of partitions on the set {1,2,...,n}; n is a natural number bigger than 2. Output is the corresponding phylogenetic tree of P, if P is phylogenetic; otherwise, output "please input a phylogenetic set of partitions". See Definition 3 in Section 1.2 for "phylogenetic set of partitions", see Definition 2 in Section 1.1 for "phylogenetic tree", and see Definition 20 in Section 2.1 for this conversion, in the preprint arXiv:2011.11774v2. Note that the names of the vertices of the output tree are some subsets of {1,2,...,n}, following the algorithm given in the above-mentioned preprint.
     P0 = list(P)
     if (is_phylogenetic_partition_set(P0,n) != 'yes'):
         return 'Please input a phylogenetic set of partitions.'
